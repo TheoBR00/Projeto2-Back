@@ -1,14 +1,10 @@
-require('dotenv').config();
-const aws = require('aws-sdk');
-let s3 = new aws.S3({mongo_connect: process.env.mongo_connect});
-var mongoose = require('mongoose');
-mongoose.connect(s3.config.mongo_connect);
+const mongoose = require('mongoose');
 
-var userSchema = new mongoose.Schema({
-    name: String,
-    type: String, 
-    text: String
-}, {collection: 'usercollection'}
-);
-
-module.exports = { Mongoose:mongoose, userSchema}
+const uri = process.env.MONGO_CONNECTION
+const options = { useNewUrlParser: true, useUnifiedTopology: true }
+mongoose.connect(uri, options)
+    .then(() => console.log("Connected successfully to MongoDB URI: " + uri))
+    .catch(err => {
+        console.log("Failed to connect to MongoDB - ", err)
+        process.exit(1)
+    })
