@@ -21,7 +21,7 @@
     "morgan": "~1.9.1"
   },
   "description": "BACK-END: projeto2NEM\r FRONT-END: projeto2-react",
-  "main": "app.js",
+  "main": "src/index.js",
   "devDependencies": {},
   "repository": {
     "type": "git",
