@@ -1,6 +1,23 @@
 var express = require('express');
 var router = express.Router();
 
+if(process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
+const bodyParser = require('body-parser')
+
+const port = process.env.PORT || 3003
+const server = express()
+
+server.use(bodyParser.urlencoded({ extended: true}))
+server.use(vodyParser.json())
+
+server.listen(port, () => { console.log(`BACKEND is running on port ${port}.`)})
+
+require('./routes')(server)
+
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
