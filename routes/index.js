@@ -1,21 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
-if(process.env.NODE_ENV !== 'production') {
-  require('dotenv').config();
-}
+module.exports = (server) => {
 
-const bodyParser = require('body-parser')
+  const router = express.Router()
+  server.use(router)
 
-const port = process.env.PORT || 3003
-const server = express()
-
-server.use(bodyParser.urlencoded({ extended: true}))
-server.use(bodyParser.json())
-
-server.listen(port, () => { console.log(`BACKEND is running on port ${port}.`)})
-
-require('./routes')(server)
 
 
 /* GET home page. */
@@ -131,5 +121,6 @@ router.get('/users/', function(req, res,next) {
     res.end();
   }});
 });
+}
 
 module.exports = router;

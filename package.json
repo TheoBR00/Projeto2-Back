@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node src/index.js"
   },
   "dependencies": {
     "aws-sdk": "^2.788.0",
@@ -21,7 +21,7 @@
     "morgan": "~1.9.1"
   },
   "description": "BACK-END: projeto2NEM\r FRONT-END: projeto2-react",
-  "main": "app.js",
+  "main": "index.js",
   "devDependencies": {},
   "repository": {
     "type": "git",
