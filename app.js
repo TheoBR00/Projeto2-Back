@@ -1,4 +1,3 @@
-/*
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -11,6 +10,23 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var apiRouter = require('./routes/api');
 //var databaseRouter = require('./routes/database');
+
+if(process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
+const bodyParser = require('body-parser')
+
+const port = process.env.PORT || 3000
+const server = express()
+
+server.use(bodyParser.urlencoded({ extended: true}))
+server.use(bodyParser.json())
+
+server.listen(port, () => { console.log(`BACKEND is running on port ${port}.`)})
+
+require('./src/config/routes')(server)
+
 
 
 const cors = require('cors')
@@ -69,4 +85,3 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
-*/

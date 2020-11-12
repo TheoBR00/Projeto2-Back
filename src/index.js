@@ -1,6 +1,4 @@
 var express = require('express');
-var app = express();
-app.use(cors())
 
 if(process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
