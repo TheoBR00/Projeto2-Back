@@ -1,4 +1,4 @@
-
+var express = require('express');
 
 if(process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
@@ -6,7 +6,7 @@ if(process.env.NODE_ENV !== 'production') {
   
   const bodyParser = require('body-parser')
   
-  const port = process.env.PORT || 3003
+  const port = process.env.PORT || 3000
   const server = express()
   
   server.use(bodyParser.urlencoded({ extended: true}))
