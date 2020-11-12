@@ -11,7 +11,7 @@ const port = process.env.PORT || 3003
 const server = express()
 
 server.use(bodyParser.urlencoded({ extended: true}))
-server.use(vodyParser.json())
+server.use(bodyParser.json())
 
 server.listen(port, () => { console.log(`BACKEND is running on port ${port}.`)})
 
