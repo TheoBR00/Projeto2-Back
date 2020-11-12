@@ -14,4 +14,4 @@ if(process.env.NODE_ENV !== 'production') {
   
   server.listen(port, () => { console.log(`BACKEND is running on port ${port}.`)})
   
-  require('../routes/index')(server)
+  require('./config/routes')(server)
