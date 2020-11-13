@@ -1,12 +1,12 @@
 var express = require('express');
 var router = express.Router();
 
-module.exports = (server) => {
+//module.exports = (server) => {
 
-  const router = express.Router()
-  server.use(router)
+  //const router = express.Router()
+  //server.use(router)
 
-  router.get('/', (req, res, next) => res.status(200).json({message: "API funcionando /o/"}));
+  //router.get('/', (req, res, next) => res.status(200).json({message: "API funcionando /o/"}));
 
 
 
@@ -123,6 +123,6 @@ router.get('/users/', function(req, res,next) {
     res.end();
   }});
 });
-}
+//}
 
 module.exports = router;
