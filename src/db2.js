@@ -15,3 +15,5 @@ var userSchema = new mongoose.Schema({
         text: String
     }, {collection: 'usercolletion'}
 );
+
+module.exports = { Mongoose:mongoose, userSchema}
