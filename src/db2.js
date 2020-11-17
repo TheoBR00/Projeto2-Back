@@ -8,3 +8,10 @@ mongoose.connect(uri, options)
         console.log("Failed to connect to MongoDB - ", err)
         process.exit(1)
     })
+
+var userSchema = new mongoose.Schema({
+        name: String,
+        type: String,
+        text: String
+    }, {collection: 'usercolletion'}
+);
