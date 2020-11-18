@@ -31,7 +31,7 @@ module.exports = (server) => {
         console.log(req.body.name);
         var newdeck= new Deck({ name:req.body.name,type:req.body.type, text:req.body.text });
         console.log(newdeck);
-        newdeck.save({function (err) {
+        newdeck.save(function (err) {
         if (err) {
             res.status(500).json({ error:err.message });
             res.end();
@@ -39,7 +39,7 @@ module.exports = (server) => {
         }
         res.json(newdeck);
         res.end();
-        }});
+        });
     });
     
     /* DELETE CARD */
